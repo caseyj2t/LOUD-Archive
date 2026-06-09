@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import {
   AtSign,
   BadgeCheck,
@@ -117,7 +118,9 @@ export default function App() {
   }, [selectedGame, selectedYear]);
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <>
+      <SpeedInsights />
+      <div className="min-h-screen bg-zinc-950 text-white">
       <a
         href="#conteudo"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-[#A3FF12] focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-zinc-950"
@@ -770,5 +773,6 @@ export default function App() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
