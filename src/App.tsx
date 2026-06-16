@@ -116,7 +116,6 @@ export default function App() {
       return result.date.endsWith(selectedYear);
     });
   }, [selectedGame, selectedYear]);
-
   return (
     <>
       <SpeedInsights />
@@ -168,6 +167,7 @@ export default function App() {
             </a>
           </div>
 
+          {/* eslint-disable-next-line jsx-a11y/aria-props */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen((value) => !value)}

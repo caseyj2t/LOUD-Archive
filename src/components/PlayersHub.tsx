@@ -17,33 +17,35 @@ import {
   type Player,
 } from "../data/playerData";
 
+const playerThemeClassMap: Record<string, string> = {
+  "#A3FF12|#0a3a05": "player-theme-0",
+  "#84cc16|#1a2e05": "player-theme-1",
+  "#A3FF12|#1f2937": "player-theme-2",
+  "#65a30d|#052e16": "player-theme-3",
+  "#bef264|#1c1917": "player-theme-4",
+  "#A3FF12|#000000": "player-theme-5",
+};
+
+function getPlayerThemeClass(player: Player) {
+  return playerThemeClassMap[player.signaturePalette.join("|")] ?? "player-theme-0";
+}
+
 function PlayerAvatar({ player, size = "md" }: { player: Player; size?: "sm" | "md" | "lg" }) {
-  const [accent, base] = player.signaturePalette;
+  const [accent] = player.signaturePalette;
+  const themeClass = getPlayerThemeClass(player);
   const dimension = size === "lg" ? "h-32 w-32" : size === "sm" ? "h-12 w-12" : "h-20 w-20";
   const fontSize = size === "lg" ? "text-4xl" : size === "sm" ? "text-base" : "text-2xl";
 
   return (
     <div
-      className={`relative ${dimension} shrink-0 overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/30`}
-      style={{
-        background: `radial-gradient(circle at 30% 25%, ${accent}33, transparent 55%), linear-gradient(135deg, ${base}, #050505 70%)`,
-      }}
+      className={`relative ${dimension} shrink-0 overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/30 player-avatar ${themeClass}`}
       aria-hidden="true"
     >
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 6px)",
-        }}
-      />
+      <div className="absolute inset-0 opacity-30 player-avatar-pattern" />
       <div className={`relative flex h-full w-full items-center justify-center ${fontSize} font-black text-white`}>
-        <span style={{ textShadow: `0 0 12px ${accent}` }}>{initialsFor(player.nickname)}</span>
+        <span className="player-avatar-text">{initialsFor(player.nickname)}</span>
       </div>
-      <div
-        className="absolute bottom-1 right-1 rounded-md px-1.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-zinc-950"
-        style={{ background: accent }}
-      >
+      <div className="absolute bottom-1 right-1 rounded-md px-1.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-zinc-950 player-avatar-caption">
         {player.flag}
       </div>
     </div>
@@ -100,6 +102,7 @@ function PlayerModal({ player, onClose }: { player: Player; onClose: () => void 
       : player.roleCategory === "staff"
       ? Headphones
       : Sparkles;
+  const themeClass = getPlayerThemeClass(player);
 
   return (
     <div
@@ -122,13 +125,7 @@ function PlayerModal({ player, onClose }: { player: Player; onClose: () => void 
           <X className="h-5 w-5" aria-hidden="true" />
         </button>
 
-        <div
-          className="relative h-40 w-full"
-          style={{
-            background: `radial-gradient(circle at 25% 50%, ${player.signaturePalette[0]}55, transparent 60%), linear-gradient(135deg, ${player.signaturePalette[1]}, #050505)`,
-          }}
-          aria-hidden="true"
-        />
+        <div className={`relative h-40 w-full player-modal-hero ${themeClass}`} aria-hidden="true" />
 
         <div className="-mt-16 px-6 pb-6 sm:px-8 sm:pb-8">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end">

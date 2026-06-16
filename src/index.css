@@ -46,6 +46,62 @@ body::-webkit-scrollbar-thumb:hover {
   background: rgba(163, 255, 18, 0.7);
 }
 
+.player-avatar {
+  background: radial-gradient(circle at 30% 25%, var(--player-accent)33, transparent 55%),
+    linear-gradient(135deg, var(--player-base), #050505 70%);
+}
+
+.player-modal-hero {
+  background: radial-gradient(circle at 25% 50%, var(--player-accent)55, transparent 60%),
+    linear-gradient(135deg, var(--player-base), #050505);
+}
+
+.player-avatar-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05) 0 2px,
+    transparent 2px 6px
+  );
+}
+
+.player-avatar-caption {
+  background: var(--player-accent);
+}
+
+.player-avatar-text {
+  text-shadow: 0 0 12px var(--player-accent);
+}
+
+.player-theme-0 {
+  --player-accent: #A3FF12;
+  --player-base: #0a3a05;
+}
+
+.player-theme-1 {
+  --player-accent: #84cc16;
+  --player-base: #1a2e05;
+}
+
+.player-theme-2 {
+  --player-accent: #A3FF12;
+  --player-base: #1f2937;
+}
+
+.player-theme-3 {
+  --player-accent: #65a30d;
+  --player-base: #052e16;
+}
+
+.player-theme-4 {
+  --player-accent: #bef264;
+  --player-base: #1c1917;
+}
+
+.player-theme-5 {
+  --player-accent: #A3FF12;
+  --player-base: #000000;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
