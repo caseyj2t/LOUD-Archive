@@ -186,6 +186,7 @@ export const loudGames: GameData[] = [
       "16/12/2025: grande reformulação do elenco anterior.",
       "28/01/2026: entrada de Bzp10, Hak, Trap, GUAXA7, Nickz7 e JOKER.",
       "31/05/2026: título da FFWS Brazil 2026 Split 1.",
+      "16/06/2026: Jhan, novo assistant coach, entrou no dia 16 de junho de 2026, logo após a conquista da FFWS Brazil Split 1.",
     ],
     marketWatch:
       "A apuração pública até junho de 2026 mostra a LOUD já reconstruída para a temporada; não apareceu rumor confiável e amplamente corroborado de novo reforço além do elenco oficial de janeiro.",
@@ -302,6 +303,7 @@ export const loudGames: GameData[] = [
       "19/12/2025: chegaram Xyno, Youngjae e Bull para a temporada 2026.",
       "19/02/2026: Envy entrou no mid lane.",
       "24/04/2026: uZent assumiu o suporte após a saída de RedBert.",
+      "16/06/2026: Sinatra, o mais novo jogador da LOUD, se junta a equipe para seguir no lugar de Youngjae para o 2º split do CBLOL."
     ],
     marketWatch:
       "Até junho de 2026, o que existe em fonte pública é basicamente janela já concluída: a LOUD já oficializou as últimas entradas e não apareceu rumor sólido extra que mereça ser tratado como provável reforço.",
