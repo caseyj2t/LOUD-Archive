@@ -101,7 +101,7 @@ export const players: Player[] = [
   {
     id: "ff-joker",
     nickname: "JOKER",
-    realName: "Comissão técnica",
+    realName: "Ângelo Gabriel",
     nationality: "Brasil",
     flag: "BR",
     role: "Coach",
@@ -111,6 +111,21 @@ export const players: Player[] = [
     modalityId: "free-fire",
     highlight: "Responsável pela estratégia e preparo competitivo do projeto 2026.",
     signaturePalette: palette(5),
+  },
+
+  {
+    id: "ff-jhan",
+    nickname: "Jhan",
+    realName: "Jhan Medeiros",
+    nationality: "Brasil",
+    flag: "BR",
+    role: "Assistant Coach",
+    roleCategory: "staff",
+    joinDate: "16/06/2026",
+    modality: "Free Fire",
+    modalityId: "free-fire",
+    highlight: "Analista recém-contratado responsável por métricas, VODs e performance da equipe de Free Fire.",
+    signaturePalette: palette(0),
   },
 
   // ===== LEAGUE OF LEGENDS =====
