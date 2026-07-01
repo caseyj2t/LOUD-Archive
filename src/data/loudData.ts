@@ -303,7 +303,8 @@ export const loudGames: GameData[] = [
       "19/12/2025: chegaram Xyno, Youngjae e Bull para a temporada 2026.",
       "19/02/2026: Envy entrou no mid lane.",
       "24/04/2026: uZent assumiu o suporte após a saída de RedBert.",
-      "16/06/2026: Sinatra, o mais novo jogador da LOUD, se junta a equipe para seguir no lugar de Youngjae para o 2º split do CBLOL."
+      "16/06/2026: Sinatra, o mais novo jogador da LOUD, se junta a equipe para seguir no lugar de Youngjae para o 2º split do CBLOL.",
+      "01/07/2026: saídas confirmadas de Envy (mid) e Bull (ADC) da equipe."
     ],
     marketWatch:
       "Até junho de 2026, o que existe em fonte pública é basicamente janela já concluída: a LOUD já oficializou as últimas entradas e não apareceu rumor sólido extra que mereça ser tratado como provável reforço.",
