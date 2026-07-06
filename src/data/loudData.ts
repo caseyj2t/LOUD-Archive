@@ -280,7 +280,14 @@ export const loudGames: GameData[] = [
         date: "31/05/2026",
         place: "Campeã",
         event: "FFWS Brazil 2026 Split 1",
-        note: "Título mais recente e um dos registros centrais da LOUD em 2026.",
+        note: "Título mais recente em mapa aberto e um dos registros centrais da LOUD em 2026.",
+      },
+
+      {
+        date: "05/07/2026",
+        place: "Campeã",
+        event: "FFCM 2026",
+        note: "A LOUD conquistou o título do Free Fire Clash Masters 2026, sendo campeã invicta, sem perder uma partida.",
       },
     ],
   },
