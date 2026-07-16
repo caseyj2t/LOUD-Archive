@@ -311,7 +311,9 @@ export const loudGames: GameData[] = [
       "19/02/2026: Envy entrou no mid lane.",
       "24/04/2026: uZent assumiu o suporte após a saída de RedBert.",
       "16/06/2026: Sinatra, o mais novo jogador da LOUD, se junta a equipe para seguir no lugar de Youngjae para o 2º split do CBLOL.",
-      "01/07/2026: saídas confirmadas de Envy (mid) e Bull (ADC) da equipe."
+      "01/07/2026: saídas confirmadas de Envy (mid) e Bull (ADC) da equipe.",
+      "10/07/2026: Chegada de Kaze, o novo mid laner da LOUD, para substituir Envy e Rabelo para o lugar do Bull."
+
     ],
     marketWatch:
       "Até junho de 2026, o que existe em fonte pública é basicamente janela já concluída: a LOUD já oficializou as últimas entradas e não apareceu rumor sólido extra que mereça ser tratado como provável reforço.",
@@ -437,6 +439,7 @@ export const loudGames: GameData[] = [
       "04/03/2026: erde entrou no elenco principal.",
       "01/04/2026: Bati chegou como assistant coach.",
       "04/05/2026: pANcada encerrou o ciclo mais recente com a organização.",
+      "15/07/2026: Virtyy encerra ciclo no time e Tkzin entra por empréstimo no lugar como o novo duelista da equipe.",
     ],
     marketWatch:
       "É a modalidade com mercado mais sensível da LOUD neste momento. Há sinais de janela ainda viva após a saída de pANcada, mas, até junho de 2026, a apuração pública não encontrou um novo nome fortemente confirmado além das entradas já oficializadas de Darker e erde. Este site não trata especulação fraca como fato.",
@@ -579,6 +582,7 @@ export const loudGames: GameData[] = [
       "08/02/2025: aquisição da line da Calabresos.",
       "11/12/2025: Role anunciou aposentadoria.",
       "25/01/2026: Trekking passou a atuar como coach.",
+      "10/07/2026: Role de volta como coach da equipe de Brawl Stars.",
     ],
     marketWatch:
       "O projeto está relativamente estável. Até a data da apuração, não há rumor público forte e recorrente de nova contratação; o cenário mais claro é a continuidade do trio competitivo com suporte técnico do Trekking.",
