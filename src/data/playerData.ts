@@ -230,17 +230,17 @@ export const players: Player[] = [
 
   // ===== VALORANT =====
   {
-    id: "vlr-cauanzin",
-    nickname: "cauanzin",
-    realName: "Cauan Pereira",
-    nationality: "Brasil",
-    flag: "BR",
+    id: "vlr-davih",
+    nickname: "davih",
+    realName: "Davi Cruz",
+    nationality: "Portugal",
+    flag: "PT",
     role: "Initiator",
     roleCategory: "player",
-    joinDate: "10/11/2022",
+    joinDate: "16/07/2026",
     modality: "VALORANT",
     modalityId: "valorant",
-    highlight: "Único remanescente da era pós-Champions 2022 e líder de longa data do projeto.",
+    highlight: "O novo Iniciador da equipe.",
     signaturePalette: palette(2),
   },
   {

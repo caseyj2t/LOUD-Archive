@@ -174,7 +174,7 @@ export const loudGames: GameData[] = [
       "Modalidade fundadora da história competitiva da LOUD e uma das maiores responsáveis pelo crescimento da marca no Brasil.",
     status: "Ativa — equipe joga sob a nomenclatura LOUD Snickers em 2026 por motivo de patrocínio.",
     currentRoster: ["Bzp10", "GUAXA7", "Hak", "Nickz7", "Trap"],
-    staff: ["JOKER (coach)"],
+    staff: ["JOKER (coach) ", "Jhan (assistant coach)"],
     achievements: [
       "Campeã da Copa América 2020.",
       "Vice-campeã do Free Fire World Series 2021 Singapore.",
@@ -297,7 +297,7 @@ export const loudGames: GameData[] = [
     description:
       "A divisão de LoL transformou a LOUD em referência de franquia no Brasil, com uma sequência histórica de títulos no CBLOL.",
     status: "Ativa — disputa o ecossistema regional sul-americano em meio à transição do CBLOL para o modelo LTA.",
-    currentRoster: ["Xyno", "Youngjae", "Envy", "Bull", "uZent"],
+    currentRoster: ["Xyno", "Sinatra", "Kaze", "Rabelo", "uZent"],
     staff: ["Raise (head coach)", "Sephis (assistant/strategic staff)"],
     achievements: [
       "Campeã do CBLOL 2022 Split 2.",
@@ -423,7 +423,7 @@ export const loudGames: GameData[] = [
     description:
       "A divisão mais internacionalmente vitoriosa da LOUD e um dos capítulos mais importantes da história do esporte eletrônico brasileiro.",
     status: "Ativa — segue no circuito VCT Americas, mesmo após grande reformulação em 2025 e 2026.",
-    currentRoster: ["cauanzin", "lukxo", "Virtyy", "Darker", "erde"],
+    currentRoster: ["Davih", "lukxo", "Tkzin", "Darker", "erde"],
     staff: ["Romanilly (head coach)", "Bati (assistant coach)", "Wenty (manager)"],
     achievements: [
       "Campeã do VCT Brazil Stage 1 2022.",
@@ -440,6 +440,7 @@ export const loudGames: GameData[] = [
       "01/04/2026: Bati chegou como assistant coach.",
       "04/05/2026: pANcada encerrou o ciclo mais recente com a organização.",
       "15/07/2026: Virtyy encerra ciclo no time e Tkzin entra por empréstimo no lugar como o novo duelista da equipe.",
+      "16/07/2026: Davih é oficializado como novo Iniciador da LOUD, substituindo Cauanzin no roster principal.",
     ],
     marketWatch:
       "É a modalidade com mercado mais sensível da LOUD neste momento. Há sinais de janela ainda viva após a saída de pANcada, mas, até junho de 2026, a apuração pública não encontrou um novo nome fortemente confirmado além das entradas já oficializadas de Darker e erde. Este site não trata especulação fraca como fato.",
@@ -568,7 +569,7 @@ export const loudGames: GameData[] = [
       "Frente competitiva recente e já extremamente relevante, com classificação para o World Finals logo no primeiro ano do projeto.",
     status: "Ativa — projeto estreou em 2025 e já colocou a LOUD entre os nomes fortes da América do Sul.",
     currentRoster: ["Edinho", "FireCrow", "KaioDog"],
-    staff: ["Trekking (coach)"],
+    staff: ["Trekking (assistant coach)", "Role (coach)"],
     achievements: [
       "Vice da South America Monthly Finals de fevereiro de 2025.",
       "Campeã da South America Monthly Finals de abril de 2025.",
