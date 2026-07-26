@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Award,
   CalendarDays,
@@ -104,17 +104,42 @@ function PlayerModal({ player, onClose }: { player: Player; onClose: () => void 
       : Sparkles;
   const themeClass = getPlayerThemeClass(player);
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    const previousTouchAction = document.body.style.touchAction;
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      document.body.style.touchAction = previousTouchAction;
+    };
+  }, [onClose]);
+
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-4 backdrop-blur-md"
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-3 sm:p-4 backdrop-blur-md"
       role="dialog"
       aria-modal="true"
       aria-labelledby={`player-${player.id}-title`}
-      onClick={onClose}
+      onPointerDown={(event) => {
+        if (event.target === event.currentTarget) {
+          onClose();
+        }
+      }}
     >
       <div
-        className="relative w-full max-w-2xl overflow-hidden rounded-[28px] border border-white/10 bg-zinc-950 shadow-2xl shadow-black/60"
-        onClick={(event) => event.stopPropagation()}
+        className="relative max-h-[calc(100vh-1.5rem)] w-full max-w-2xl overflow-y-auto rounded-[28px] border border-white/10 bg-zinc-950 shadow-2xl shadow-black/60"
+        onPointerDown={(event) => event.stopPropagation()}
       >
         <button
           type="button"
