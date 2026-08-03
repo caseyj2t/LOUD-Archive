@@ -713,7 +713,7 @@ export const loudGames: GameData[] = [
       "Uma modalidade em ciclos: a LOUD entrou em 2020, saiu em 2022 e voltou em 2024 mirando a Esports World Cup e o alto nível competitivo brasileiro.",
     status: "Ativa — retomada oficial em 2024, com foco em atletas de ponta do cenário brasileiro.",
     currentRoster: ["Diguera", "mack"],
-    staff: ["Histórico recente: Dias foi o coach anunciado no retorno de 2024"],
+    staff: ["Histórico recente: Diguera e Mack foram Campeões da FNCS Major 2 em 2026, com destaque para a performance individual e coletiva."],
     achievements: [
       "Campeã do Twitch Rivals LATAM Showdown 2021.",
       "Vice da FNCS Chapter 2 Season 7 Brasil.",
