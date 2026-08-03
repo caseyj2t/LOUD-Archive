@@ -721,6 +721,7 @@ export const loudGames: GameData[] = [
       "Vice da FNCS 2024 Major 3 Brasil.",
       "Vice da FNCS 2025 Major 1 Brasil.",
       "Campeã da Unreal Cup Brazil 2025.",
+      "Campeã da FNCS Major 2 em 2026.",
     ],
     recentMoves: [
       "13/06/2024: retorno oficial da LOUD ao Fortnite para a EWC.",
@@ -790,6 +791,12 @@ export const loudGames: GameData[] = [
         place: "Campeã",
         event: "Unreal Cup Brasil",
         note: "mack e Diguera fecharam 2025 com título.",
+      },
+      {
+        date: "02/08/2026",
+        place: "Campeã",
+        event: "FNCS Major 2",
+        note: "Título importante para elevar a organização ao topo do cenário.",
       },
     ],
   },
