@@ -1,0 +1,39 @@
+# Versão pronta para produção.
+# Permite rastreio apenas do conteúdo público e bloqueia áreas internas/sensíveis.
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /assets/
+Allow: /images/
+Allow: /public/
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /signin/
+Disallow: /signup/
+Disallow: /api/
+Disallow: /cms/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /config/
+Disallow: /secret/
+Disallow: /backup/
+Disallow: /logs/
+Disallow: /tmp/
+Disallow: /uploads/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /dist/
+Disallow: /coverage/
+Disallow: /_next/
+Disallow: /vendor/
+
+# Domínio real do site em produção.
+Host: loud-archive.vercel.app
+
+Sitemap: https://loud-archive.vercel.app/sitemap.xml
