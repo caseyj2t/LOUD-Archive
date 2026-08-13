@@ -746,29 +746,47 @@ export default function App() {
       </main>
 
       <footer className="border-t border-white/10 bg-black/40">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">LOUD Archive</p>
-            <p className="max-w-3xl text-sm leading-7 text-zinc-300">
-              Conteúdo consolidado com base em fontes públicas verificáveis até {siteMeta.updatedAt}. Este site
-              evita transformar especulação em fato e usa apenas links externos destacados e protegidos.
-            </p>
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto]">
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">LOUD Archive</p>
+              <p className="max-w-3xl text-sm leading-7 text-zinc-300">
+                Conteúdo consolidado com base em fontes públicas verificáveis até {siteMeta.updatedAt}. Este site
+                evita transformar especulação em fato e usa apenas links externos destacados e protegidos.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="#hero"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-bold text-white transition hover:border-[#A3FF12]/40 hover:text-[#A3FF12]"
+              >
+                Voltar ao topo
+              </a>
+              <ExternalAnchor
+                href="https://loud.gg/"
+                className="inline-flex items-center gap-2 rounded-full bg-[#A3FF12] px-4 py-2 text-sm font-black text-zinc-950 transition hover:brightness-110"
+              >
+                Acessar LOUD oficial
+                <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              </ExternalAnchor>
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href="#hero"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-bold text-white transition hover:border-[#A3FF12]/40 hover:text-[#A3FF12]"
-            >
-              Voltar ao topo
-            </a>
-            <ExternalAnchor
-              href="https://loud.gg/"
-              className="inline-flex items-center gap-2 rounded-full bg-[#A3FF12] px-4 py-2 text-sm font-black text-zinc-950 transition hover:brightness-110"
-            >
-              Acessar LOUD oficial
-              <ExternalLink className="h-4 w-4" aria-hidden="true" />
-            </ExternalAnchor>
+          <div className="border-t border-white/10 pt-6">
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">Desenvolvido por:</p>
+              <div>
+                <ExternalAnchor
+                  href="https://x.com/nmixbay"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-bold text-zinc-300 transition hover:border-[#A3FF12]/40 hover:bg-white/[0.05] hover:text-[#A3FF12]"
+                >
+                  <X className="h-4 w-4" aria-hidden="true" />
+                  nmixbay
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                </ExternalAnchor>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
