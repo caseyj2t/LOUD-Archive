@@ -649,6 +649,12 @@ export const loudGames: GameData[] = [
         event: "Brawl Stars Championship 2026: March SA Monthly Finals",
         note: "A LOUD continua entre as candidatas mais fortes da região.",
       },
+      {
+        date: "15/08/2026",
+        place: "Campeã",
+        event: "Brawl Stars Championship 2026: August SA Monthly Finals",
+        note: "Mais um título continental para a LOUD em 2026 e vaga na LCQ para tentar disputar o mundial.",
+      }
     ],
   },
   {
