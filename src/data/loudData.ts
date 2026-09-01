@@ -20,7 +20,7 @@ export type GameData = {
 };
 
 export const siteMeta = {
-  updatedAt: "junho de 2026",
+  updatedAt: "Setembro de 2026",
   headline: "LOUD — a maior potência de e-sports e gaming lifestyle da América Latina",
   summary:
     "Dossiê visual e interativo com história, conquistas, elencos ativos, redes oficiais, marcos institucionais e panorama competitivo da LOUD em Free Fire, League of Legends, VALORANT, Brawl Stars, Rainbow Six e Fortnite.",
@@ -189,7 +189,7 @@ export const loudGames: GameData[] = [
       "16/06/2026: Jhan, novo assistant coach, entrou no dia 16 de junho de 2026, logo após a conquista da FFWS Brazil Split 1.",
     ],
     marketWatch:
-      "A apuração pública até junho de 2026 mostra a LOUD já reconstruída para a temporada; não apareceu rumor confiável e amplamente corroborado de novo reforço além do elenco oficial de janeiro.",
+      "A apuração pública até setembro de 2026 mostra a LOUD já reconstruída para a temporada; não apareceu rumor confiável e amplamente corroborado de novo reforço além do elenco oficial de janeiro.",
     archiveUrl: "https://liquipedia.net/freefire/LOUD/Results",
     results: [
       {
