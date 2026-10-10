@@ -20,7 +20,7 @@ export type GameData = {
 };
 
 export const siteMeta = {
-  updatedAt: "Setembro de 2026",
+  updatedAt: "Outubro de 2026",
   headline: "LOUD — a maior potência de e-sports e gaming lifestyle da América Latina",
   summary:
     "Dossiê visual e interativo com história, conquistas, elencos ativos, redes oficiais, marcos institucionais e panorama competitivo da LOUD em Free Fire, League of Legends, VALORANT, Brawl Stars, Rainbow Six e Fortnite.",
@@ -544,13 +544,13 @@ export const loudGames: GameData[] = [
       },
       {
         date: "31/01/2026",
-        place: "11º-12º",
+        place: "12º",
         event: "VCT 2026 Americas Kickoff",
         note: "Começo de 2026 ainda em processo de reconstrução.",
       },
       {
         date: "16/05/2026",
-        place: "7º-8º",
+        place: "7º",
         event: "VCT 2026 Americas Stage 1",
         note: "Melhora relativa, mas ainda abaixo da elite continental.",
       },
@@ -560,6 +560,18 @@ export const loudGames: GameData[] = [
         event: "Esports World Cup 2026 Americas Qualifier",
         note: "A equipe ficou perto da vaga, mas caiu na fase final da classificatória.",
       },
+      {
+        date: "06/09/2026",
+        place: "2º",
+        event: "VCT 2026 Americas Stage 2",
+        note: "A LOUD terminou 2026 com a clasiificação para o Chmapions Shangai e top 2 no VCT Americas Stage 2.",
+      },
+      {
+        date: "09/10/2026",
+        place: "3º",
+        event: "Champions Shanghai 2026",
+        note: "A LOUD conquista o top 3 do Chmapions e está na final da Upper Bracket.",
+      }
     ],
   },
   {
