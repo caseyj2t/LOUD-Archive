@@ -564,13 +564,13 @@ export const loudGames: GameData[] = [
         date: "06/09/2026",
         place: "2º",
         event: "VCT 2026 Americas Stage 2",
-        note: "A LOUD terminou 2026 com a clasiificação para o Chmapions Shangai e top 2 no VCT Americas Stage 2.",
+        note: "A LOUD terminou 2026 com a clasificação para o Champions Shangai e top 2 no VCT Americas Stage 2.",
       },
       {
         date: "09/10/2026",
         place: "3º",
         event: "Champions Shanghai 2026",
-        note: "A LOUD conquista o top 3 do Chmapions e está na final da Upper Bracket.",
+        note: "A LOUD conquista o top 3 do Champions e está na final da Upper Bracket.",
       }
     ],
   },
