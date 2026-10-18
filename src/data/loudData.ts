@@ -571,7 +571,13 @@ export const loudGames: GameData[] = [
         place: "3º",
         event: "Champions Shanghai 2026",
         note: "A LOUD conquista o top 3 do Champions e está na final da Upper Bracket.",
-      }
+      },
+      {
+        date: "18/10/2026",
+        place: "1º",
+        event: "Champions Shanghai 2026",
+        note: "A LOUD conquista o Champions e consolida o Bi Campeonato Mundial de VALORANT, derrotando a Vitallity por 3-1 na final.",
+      },
     ],
   },
   {
