@@ -433,6 +433,8 @@ export const loudGames: GameData[] = [
       "Vice do LOCK//IN São Paulo 2023.",
       "Campeã do VCT Americas 2023.",
       "3º lugar no VALORANT Champions 2023.",
+      "Vice do VCT Americas Stage 2 2026.",
+      "Campeão do Champions Shanghai 2026.",
     ],
     recentMoves: [
       "05/12/2025: Darker foi oficializado como flex.",
