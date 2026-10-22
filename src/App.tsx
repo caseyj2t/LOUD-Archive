@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -109,6 +109,57 @@ export default function App() {
   const [consentChoice, setConsentChoice] = useState<ConsentChoice | null>(null);
   const handleConsentChange = useCallback((choice: ConsentChoice | null) => {
     setConsentChoice(choice);
+  }, []);
+
+  useEffect(() => {
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const selector = "main section, main section article, main section button.group, footer";
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scroll-reveal-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    const observeTargets = (root: ParentNode) => {
+      if (root instanceof Element && root.matches(selector) && !root.classList.contains("scroll-reveal")) {
+        root.classList.add("scroll-reveal");
+        observer.observe(root);
+      }
+
+      root.querySelectorAll(selector).forEach((element) => {
+        if (!element.classList.contains("scroll-reveal")) {
+          element.classList.add("scroll-reveal");
+          observer.observe(element);
+        }
+      });
+    };
+
+    observeTargets(document);
+    const mutationObserver = new MutationObserver((records) => {
+      records.forEach((record) => {
+        record.addedNodes.forEach((node) => {
+          if (node instanceof Element) observeTargets(node);
+        });
+      });
+    });
+    mutationObserver.observe(document.querySelector("main")!, { childList: true, subtree: true });
+
+    return () => {
+      mutationObserver.disconnect();
+      observer.disconnect();
+    };
   }, []);
 
   const selectedGame = useMemo(
