@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Award,
   CalendarDays,
@@ -96,6 +96,8 @@ function PlayerCard({ player, onSelect }: { player: Player; onSelect: (player: P
 }
 
 function PlayerModal({ player, onClose }: { player: Player; onClose: () => void }) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const RoleIcon =
     player.roleCategory === "coach"
       ? ShieldHalf
@@ -105,9 +107,30 @@ function PlayerModal({ player, onClose }: { player: Player; onClose: () => void 
   const themeClass = getPlayerThemeClass(player);
 
   useEffect(() => {
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose();
+        return;
+      }
+
+      if (event.key === "Tab" && dialogRef.current) {
+        const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (!first || !last) {
+          event.preventDefault();
+          dialogRef.current.focus();
+        } else if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     };
 
@@ -117,11 +140,13 @@ function PlayerModal({ player, onClose }: { player: Player; onClose: () => void 
     document.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
     document.body.style.touchAction = "none";
+    closeButtonRef.current?.focus();
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
       document.body.style.touchAction = previousTouchAction;
+      previouslyFocused?.focus();
     };
   }, [onClose]);
 
@@ -131,6 +156,8 @@ function PlayerModal({ player, onClose }: { player: Player; onClose: () => void 
       role="dialog"
       aria-modal="true"
       aria-labelledby={`player-${player.id}-title`}
+      tabIndex={-1}
+      ref={dialogRef}
       onPointerDown={(event) => {
         if (event.target === event.currentTarget) {
           onClose();
@@ -142,6 +169,7 @@ function PlayerModal({ player, onClose }: { player: Player; onClose: () => void 
         onPointerDown={(event) => event.stopPropagation()}
       >
         <button
+          ref={closeButtonRef}
           type="button"
           onClick={onClose}
           className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-zinc-900 text-white transition hover:border-[#A3FF12]/50 hover:text-[#A3FF12]"
@@ -257,6 +285,7 @@ export default function PlayersHub() {
                     key={modality.id}
                     type="button"
                     onClick={() => setActiveModality(modality.id)}
+                    aria-pressed={isActive}
                     className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.18em] transition ${
                       isActive
                         ? "bg-[#A3FF12] text-zinc-950"
@@ -280,6 +309,7 @@ export default function PlayersHub() {
                     key={category.id}
                     type="button"
                     onClick={() => setActiveCategory(category.id)}
+                    aria-pressed={isActive}
                     className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.18em] transition ${
                       isActive
                         ? "bg-[#A3FF12] text-zinc-950"

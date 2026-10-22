@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -34,6 +34,8 @@ import {
   sources,
 } from "./data/loudData";
 import PlayersHub from "./components/PlayersHub";
+import CookieConsent, { type ConsentChoice } from "./components/CookieConsent";
+import LegalPages from "./components/LegalPages";
 
 type SocialIconMap = Record<string, LucideIcon>;
 
@@ -104,6 +106,10 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedGameId, setSelectedGameId] = useState("valorant");
   const [selectedYear, setSelectedYear] = useState("Todos");
+  const [consentChoice, setConsentChoice] = useState<ConsentChoice | null>(null);
+  const handleConsentChange = useCallback((choice: ConsentChoice | null) => {
+    setConsentChoice(choice);
+  }, []);
 
   const selectedGame = useMemo(
     () => loudGames.find((game) => game.id === selectedGameId) ?? loudGames[0],
@@ -118,7 +124,7 @@ export default function App() {
   }, [selectedGame, selectedYear]);
   return (
     <>
-      <SpeedInsights />
+      {consentChoice === "analytics" && <SpeedInsights />}
       <div className="min-h-screen bg-zinc-950 text-white">
       <a
         href="#conteudo"
@@ -167,12 +173,12 @@ export default function App() {
             </a>
           </div>
 
-          {/* eslint-disable-next-line jsx-a11y/aria-props */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen((value) => !value)}
             className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 text-white transition hover:border-[#A3FF12]/50 hover:text-[#A3FF12] lg:hidden"
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
             aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -181,7 +187,7 @@ export default function App() {
 
         {mobileMenuOpen && (
           <div className="border-t border-white/10 bg-zinc-950 lg:hidden">
-            <nav className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6" aria-label="Menu móvel">
+            <nav id="mobile-navigation" className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6" aria-label="Menu móvel">
               {navItems.map((item) => (
                 <a
                   key={item.href}
@@ -297,7 +303,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="visao-geral" className="border-b border-white/10 py-20">
+        <section id="visao-geral" className="scroll-mt-28 border-b border-white/10 py-20">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
             <div className="space-y-8">
               <SectionTitle
@@ -344,15 +350,15 @@ export default function App() {
 
               <div className="rounded-[24px] border border-[#A3FF12]/25 bg-[#A3FF12]/10 p-5">
                 <p className="text-sm leading-7 text-zinc-100">
-                  Este site foi desenhado para informar sem coletar dados do visitante. Não há área de login,
-                  formulário, checkout ou qualquer fluxo que exija dado pessoal.
+                  Este site não solicita dados pessoais por formulários, login ou compras. A hospedagem pode
+                  processar registros técnicos de conexão; a medição opcional só funciona após consentimento.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="linha-do-tempo" className="border-b border-white/10 py-20">
+        <section id="linha-do-tempo" className="scroll-mt-28 border-b border-white/10 py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionTitle
               kicker="Linha do tempo"
@@ -378,7 +384,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="modalidades" className="border-b border-white/10 py-20">
+        <section id="modalidades" className="scroll-mt-28 border-b border-white/10 py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionTitle
               kicker="Modalidades"
@@ -454,7 +460,7 @@ export default function App() {
 
         <PlayersHub />
 
-        <section id="arquivo-competitivo" className="border-b border-white/10 py-20">
+        <section id="arquivo-competitivo" className="scroll-mt-28 border-b border-white/10 py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionTitle
               kicker="Arquivo competitivo"
@@ -476,6 +482,7 @@ export default function App() {
                         key={game.id}
                         type="button"
                         onClick={() => setSelectedGameId(game.id)}
+                        aria-pressed={isActive}
                         className={`w-full rounded-[24px] border px-4 py-4 text-left transition ${
                           isActive
                             ? "border-[#A3FF12]/40 bg-[#A3FF12]/10 text-white"
@@ -605,6 +612,7 @@ export default function App() {
                             key={year}
                             type="button"
                             onClick={() => setSelectedYear(year)}
+                            aria-pressed={selectedYear === year}
                             className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.18em] transition ${
                               isActive
                                 ? "bg-[#A3FF12] text-zinc-950"
@@ -663,7 +671,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="redes-fontes" className="py-20">
+        <section id="redes-fontes" className="scroll-mt-28 py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionTitle
               kicker="Redes & fontes"
@@ -743,6 +751,7 @@ export default function App() {
             </div>
           </div>
         </section>
+        <LegalPages />
       </main>
 
       <footer className="border-t border-white/10 bg-black/40">
@@ -763,6 +772,25 @@ export default function App() {
               >
                 Voltar ao topo
               </a>
+              <a
+                href="#politica-de-privacidade"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-bold text-white transition hover:border-[#A3FF12]/40 hover:text-[#A3FF12]"
+              >
+                Privacidade
+              </a>
+              <a
+                href="#termos-de-servico"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-bold text-white transition hover:border-[#A3FF12]/40 hover:text-[#A3FF12]"
+              >
+                Termos de serviço
+              </a>
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new Event("open-cookie-preferences"))}
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-bold text-white transition hover:border-[#A3FF12]/40 hover:text-[#A3FF12]"
+              >
+                Preferências de privacidade
+              </button>
               <ExternalAnchor
                 href="https://loud.gg/"
                 className="inline-flex items-center gap-2 rounded-full bg-[#A3FF12] px-4 py-2 text-sm font-black text-zinc-950 transition hover:brightness-110"
@@ -790,6 +818,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      <CookieConsent onConsentChange={handleConsentChange} />
     </div>
     </>
   );
